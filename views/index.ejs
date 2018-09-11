@@ -1,0 +1,37 @@
+<% include ./partials/header %>
+
+<div class='container'>
+        <!-- ASSIGN RANDOM BANNER OUT OF 10 PNG FILES -->
+    <% let random = Math.floor(Math.random() * 10) %>
+    <div class='banner' style='background-image:url(/images/banner<%=random%>.png)''>
+        <img class='logo' src='/images/logo.png'>
+        <h1 class='heading'>Top Articles</h1>
+    </div>
+    <div class="flex-container">
+
+        <!-- CREATE ARTICLE BOX USING API CONTENT -->
+    <% data.articles.forEach(function(story) { %>
+        <% let author = story['author'] %>
+        <% let time = new Date(story['publishedAt']) %>
+        <% let title = story['title'] %>
+        <% let url = story['url'] %>
+        <% let image = story['urlToImage'] %>
+        <% let description = story['description'] %>
+        <% let link = 'Read the full article...' %>        
+
+        <ul>
+            <li class='date'><%= time.toDateString() %></li>
+            <li class='title'><a href='<%=url%>' target='_blank'><h3><%= title %></h3></a></li>
+            <li>BY <span class='author'><%= author %><span></li>
+            <li class='image'><img src='<%=image%>'></li>
+
+            <% if (description != "") { %> <li class='desc'><%= description %></li> <% } %>
+
+            <li class='link'><a href='<%=url%>' target='_blank'><%= link %></a></li>
+        </ul>
+        
+    <% }); %>
+    </div>
+</div>
+
+<% include ./partials/footer %>

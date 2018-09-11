@@ -1,0 +1,197 @@
+body {
+    font-family: 'Gothic A1', sans-serif;
+    text-align: center;
+    color: #FFF;
+    background: #000;
+    margin: 0;
+}
+
+h1 {
+    font-size: 1.5em;
+    text-align: left;
+    margin: 0 0 0 7%;
+}
+
+ul {
+    background-color: #000;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    background-clip: padding-box;
+    border-width: thin;
+    border-style: solid; 
+    border-color: rgba(255,255,255,.01);
+}
+
+li {
+    padding: 10px;
+}
+
+h3 {
+    margin: 0;
+}
+
+span {
+    color: #D70959;
+}
+
+img {
+    max-width: 80%;
+}
+
+footer {
+    padding: 8% 0 8% 0;
+    margin: 0 auto;
+    max-width: 100%;
+    /*background-image: linear-gradient(to right, #F7C626 20%, #E5127D 80%); ALTERNATE GRADIENT COLOR, YELLOW TO PURPLE */
+    background-image: linear-gradient(to right, #13E0E8 20%, #D6056B 80%);
+    background-image: -webkit-linear-gradient(left, #13E0E8 20%, #D6056B 80%);
+    background-image: -moz-linear-gradient(left, #13E0E8 20%, #D6056B 80%);
+    background-image: -o-linear-gradient(left, #13E0E8 20%, #D6056B 80%);    
+    background-image: -ms-linear-gradient(left, #13E0E8 20%, #D6056B 80%);
+}
+
+footer a {
+    color: #F7C626;
+    text-align: center;
+    text-decoration: none;
+    font-style: italic;
+}
+
+.banner {
+    /* BACKGROUND-IMAGE ASSIGNED IN EJS FILE */
+    background-position: center top;
+    background-size: 100%
+}
+
+.logo {
+    max-width: 50%;
+    margin-right: 45%;
+    margin-top: 3%;
+}
+
+.date {
+    font-weight: 300;
+    font-size: .8em;
+    font-style: italic;
+    text-align: left;
+    padding-top: auto;
+}
+
+.title {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 700;
+    max-height: 10%;
+    border-bottom: thin;
+    text-decoration: none;
+}
+
+.title a {
+    text-decoration: none;
+    color: #FFF;
+}
+
+.title a:hover { 
+    color: #B60E63; 
+}
+
+.title a:active {
+    color: inherit;
+}
+
+.author {
+    color: #BF0F68;
+    text-transform: uppercase;
+}
+
+.image {
+    text-align: center;
+}
+
+.desc {
+    max-height: 10%;
+    font-style: italic;
+
+}
+
+.link a {
+    color: #E5127D;
+    padding: 10px auto;
+    text-align: center;
+    text-decoration: none;
+    font-style: italic;
+
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.flex-container {
+    margin: 0 auto;
+    width: 100%;
+
+    /*background: linear-gradient(to right, #F7C626 20%, #E5127D 80%); ALTERNATE GRADIENT COLOR, YELLOW TO PURPLE */
+    background-image: linear-gradient(to right, #13E0E8 20%, #D6056B 80%);
+    background-image: -webkit-linear-gradient(left, #13E0E8 20%, #D6056B 80%);
+    background-image: -moz-linear-gradient(left, #13E0E8 20%, #D6056B 80%);
+    background-image: -o-linear-gradient(left, #13E0E8 20%, #D6056B 80%);    
+    background-image: -ms-linear-gradient(left, #13E0E8 20%, #D6056B 80%);
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+  /*MAKE SOME IMAGES TAKE TWICE AS MUCH SPACE IN COLUMN, AND LAST IMAGE TAKE ALL SPACE */
+
+.flex-container > ul:nth-child(1) {
+    flex: 1 1 66%;
+       text-align: left;
+}
+.flex-container > ul:nth-child(4) {
+    flex: 1 1 66%;
+    text-align: left;
+}
+
+.flex-container > ul:nth-child(5) {
+    flex: 1 1 66%;
+    text-align: left;
+}
+
+.flex-container > ul:nth-child(10) {
+    flex: 1 1 100%;
+}
+
+ /* SINGLE COLUMN FOR MOBILE DEVICES */
+
+@media only screen and (min-width: 600px) {
+
+    .container {
+        max-width: 80%;
+    }
+
+    .flex-container > * {
+        flex: 1 1 33%;
+    }
+
+    footer {
+        max-width: 80%;
+    }
+    
+    h1 {
+        font-size: 3em;
+    }
+
+}
+
+ /* HOVER ONLY ON NON-MOBILE DEVICES TO AVOID STICKY HOVER */
+
+@media (hover: none) {
+    .title a:hover { 
+        color: inherit;
+    }
+}

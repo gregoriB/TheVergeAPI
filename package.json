@@ -1,0 +1,26 @@
+{
+  "name": "thevergeapi",
+  "version": "1.0.0",
+  "description": "A site that fetches the top 10 stories from theVerge.com using an API.  Uses node.js.",
+  "main": "app.js",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "request": "^2.88.0",
+    "require": "^2.4.20"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gregoriB/TheVergeAPI.git"
+  },
+  "author": "gregoriB",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gregoriB/TheVergeAPI/issues"
+  },
+  "homepage": "https://github.com/gregoriB/TheVergeAPI#readme"
+}
