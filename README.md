@@ -3,7 +3,7 @@ Uses an API from https://newsapi.org.
 The API key is hidden from the public.  In order to run this, one must add their own API key.  To do this, create an 'apikeys.js' file and add your API key to an object.  Then perform a module export on the object.  Follow this example: 
 
 	const apikey = {
-			SECRET_KEY: 'YOUR_SECRET_API_KEY_GOES_HERE'
+			SECRET_KEY: 'apiKey=YOUR_SECRET_API_KEY_GOES_HERE'
 			}
 
 	module.exports = apikey;

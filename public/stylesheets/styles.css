@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Gothic A1';
+	src: url('../fonts/GothicA1-Light.ttf') format('truetype'),
+		 url('../fonts/GothicA1-Regular.ttf') format('truetype'),
+		 url('../fonts/GothicA1-Bold.tff') format('truetype');
+}
+
 body {
     font-family: 'Gothic A1', sans-serif;
     text-align: center;
@@ -19,8 +26,8 @@ ul {
     list-style: none;
     box-sizing: border-box;
     background-clip: padding-box;
-    border-width: thin;
-    border-style: solid; 
+    border-style: solid;
+    border-width: 2px;
     border-color: rgba(255,255,255,.01);
 }
 
@@ -44,7 +51,6 @@ footer {
     padding: 8% 0 8% 0;
     margin: 0 auto;
     max-width: 100%;
-    /*background-image: linear-gradient(to right, #F7C626 20%, #E5127D 80%); ALTERNATE GRADIENT COLOR, YELLOW TO PURPLE */
     background-image: linear-gradient(to right, #13E0E8 20%, #D6056B 80%);
     background-image: -webkit-linear-gradient(left, #13E0E8 20%, #D6056B 80%);
     background-image: -moz-linear-gradient(left, #13E0E8 20%, #D6056B 80%);
@@ -122,19 +128,18 @@ footer a {
     text-align: center;
     text-decoration: none;
     font-style: italic;
-
 }
 
 .container {
     max-width: 100%;
     margin: 0 auto;
+    overflow: auto;
 }
 
 .flex-container {
     margin: 0 auto;
     width: 100%;
 
-    /*background: linear-gradient(to right, #F7C626 20%, #E5127D 80%); ALTERNATE GRADIENT COLOR, YELLOW TO PURPLE */
     background-image: linear-gradient(to right, #13E0E8 20%, #D6056B 80%);
     background-image: -webkit-linear-gradient(left, #13E0E8 20%, #D6056B 80%);
     background-image: -moz-linear-gradient(left, #13E0E8 20%, #D6056B 80%);
@@ -146,50 +151,50 @@ footer a {
     align-items: center;
 }
 
-  /*MAKE SOME IMAGES TAKE TWICE AS MUCH SPACE IN COLUMN, AND LAST IMAGE TAKE ALL SPACE */
-
-.flex-container > ul:nth-child(1) {
-    flex: 1 1 66%;
-       text-align: left;
-}
-.flex-container > ul:nth-child(4) {
-    flex: 1 1 66%;
-    text-align: left;
-}
-
-.flex-container > ul:nth-child(5) {
-    flex: 1 1 66%;
-    text-align: left;
-}
-
-.flex-container > ul:nth-child(10) {
-    flex: 1 1 100%;
-}
 
  /* SINGLE COLUMN FOR MOBILE DEVICES */
+@media only screen and (min-width: 700px) {
 
-@media only screen and (min-width: 600px) {
+	.flex-container > * {
+    	flex: 1 1 33%
+	}
+	footer {
+	    max-width: 90%;
+	}
+	
+	h1 {
+	    font-size: 3em;
+	}
 
-    .container {
-        max-width: 80%;
-    }
+	.container {
+	    max-width: 90%;
+	}
 
-    .flex-container > * {
-        flex: 1 1 33%;
-    }
-
-    footer {
-        max-width: 80%;
-    }
-    
-    h1 {
-        font-size: 3em;
-    }
-
+  		/*MAKE SOME IMAGES TAKE TWICE AS MUCH SPACE IN COLUMN, AND LAST IMAGE TAKE ALL SPACE */
+	.flex-container > ul:nth-child(1) {
+	    flex: 1 1 66%;
+	       text-align: left;
+           margin-right: -2px;
+	}
+	
+	.flex-container > ul:nth-child(4) {
+	    flex: 1 1 66%;
+ 	   	text-align: left;
+        margin-left: -2px;
+	}
+	
+	.flex-container > ul:nth-child(5) {
+	    flex: 1 1 66%;
+	    text-align: left;
+        margin-right: -2px;
+	}
+	
+	.flex-container > ul:nth-child(10) {
+	    flex: 1 1 100%;
+	}
 }
 
  /* HOVER ONLY ON NON-MOBILE DEVICES TO AVOID STICKY HOVER */
-
 @media (hover: none) {
     .title a:hover { 
         color: inherit;
