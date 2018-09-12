@@ -12,8 +12,6 @@
         <!-- CREATE ARTICLE BOX USING API CONTENT -->
     <% data.articles.forEach(function(story) { %>
         <% let author = story['author'] %>
-            <!-- STOPS AUTHOR COLLABORATIONS FROM BREAKING THE FORMAT -->
-        <% if (author && author.length > 30) { author = 'Multiple authors' } %>
         <% let time = new Date(story['publishedAt']) %>
         <% let title = story['title'] %>
         <% let url = story['url'] %>
@@ -26,7 +24,10 @@
             <li class='date'><%= time.toDateString() %></li>
             <li class='title'><a href='<%=url%>' target='_blank'><h3><%= title %></h3></a></li>
                 <!-- CHECKS TO MAKE SURE AUTHOR ISN'T NULL BEFORE CREATING AUTHOR LI -->
-            <% if (author) { %> <li>BY <span class='author'><%= author %><span></li> <% } %>
+            <li>BY <span class='author'>
+                <!-- STOPS AUTHOR COLLABORATIONS AND NULL VALUES FROM BREAKING THE FORMAT -->
+                <% if (author && author.indexOf(',') != true) { %> <%= author %> <% } else { %>Verge Staff<% } %>
+            <span></li> 
             <li class='image'><img src='<%=imageNoSpaces%>'></li>
 
             <% if (description && description != "") { %> <li class='desc'><%= description %></li> <% } %>
