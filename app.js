@@ -3,7 +3,7 @@ const app = express();
 const request = require('request');
 const apikey = require('./apikeys.js');
 
-const server = app.listen(3000, "127.0.0.1", function () {
+const server = app.listen(3000, "127.0.0.1", function() {
     let host = server.address().address;
     let port = server.address().port;
     console.log('server running at:');

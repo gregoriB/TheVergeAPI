@@ -15,15 +15,16 @@
         <% let time = new Date(story['publishedAt']) %>
         <% let title = story['title'] %>
         <% let url = story['url'] %>
-        <% let image = story['urlToImage'] %>
         <% let description = story['description'] %>
         <% let link = 'Read the full article...' %>        
+        <% let image = story['urlToImage'] %>
+        <% let imageNoSpaces = image.replace(/\s+/g,"%20")%>
 
         <ul>
             <li class='date'><%= time.toDateString() %></li>
             <li class='title'><a href='<%=url%>' target='_blank'><h3><%= title %></h3></a></li>
             <li>BY <span class='author'><%= author %><span></li>
-            <li class='image'><img src='<%=image%>'></li>
+            <li class='image'><img src='<%=imageNoSpaces%>'></li>
 
             <% if (description != "") { %> <li class='desc'><%= description %></li> <% } %>
 
