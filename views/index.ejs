@@ -2,7 +2,7 @@
 
 <div class='container'>
         <!-- ASSIGN RANDOM BANNER OUT OF 10 IMAGE FILES -->
-    <% let random = Math.floor(Math.random() * 10) %>
+    <% const random = Math.floor(Math.random() * 10) %>
     <div class='banner' style='background-image:url(/images/banner<%=random%>.png)''>
         <img class='logo' src='/images/logo.png'>
         <h1 class='heading'>Top Articles</h1>
@@ -11,14 +11,14 @@
 
         <!-- CREATE ARTICLE BOX USING API CONTENT -->
     <% data.articles.forEach(function(story) { %>
-        <% let author = story['author'] %>
-        <% let time = new Date(story['publishedAt']) %>
-        <% let title = story['title'] %>
-        <% let url = story['url'] %>
-        <% let description = story['description'] %>
-        <% let link = 'Read the full article...' %>        
-        <% let image = story['urlToImage'] %>
-        <% let imageNoSpaces = image.replace(/\s+/g,"%20")%> <!-- REPLACES SPACES WITH '%20' TO AVOID BLANK IMAGES -->
+        <% const author = story['author'] %>
+        <% const time = new Date(story['publishedAt']) %>
+        <% const title = story['title'] %>
+        <% const url = story['url'] %>
+        <% const description = story['description'] %>
+        <% const link = 'Read the full article...' %>        
+        <% const image = story['urlToImage'] %>
+        <% const imageNoSpaces = image.replace(/\s+/g,"%20")%> <!-- REPLACES SPACES WITH '%20' TO AVOID BLANK IMAGES -->
 
         <ul>
             <li class='date'><%= time.toDateString() %></li>

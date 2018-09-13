@@ -5,8 +5,8 @@ const apikey = require('./apikeys.js');
 
  // for local testing purposes
 const server = app.listen(3000, "127.0.0.1", function() {
-    let host = server.address().address;
-    let port = server.address().port;
+    const host = server.address().address;
+    const port = server.address().port;
     console.log('server running at:');
     console.log('http://' + host + ':' + port);
 });
@@ -20,7 +20,7 @@ app.get('/', function(req, res) {
     const key = apikey.SECRET_KEY; // taken from exported object in ./apikeys.js
     request(url + key, function(error, response, body) {
         if (!error && response.statusCode == 200) {
-            let data = JSON.parse(body);
+            const data = JSON.parse(body);
             res.render('index', {data: data});
         } else {
             console.log(error);
