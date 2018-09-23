@@ -1,4 +1,5 @@
-Uses an API from https://newsapi.org.
+
+https://theverge-top-stories.herokuapp.com/
 
 The API key is hidden from the public.  In order to run this, one must add their own API key.  To do this, create an 'apikeys.js' file and add your API key to an object.  Then perform a module export on the object.  Follow this example: 
 
@@ -15,3 +16,6 @@ Of if you choose to, you can instead paste your API key into the 'key' variable 
 
 
 It's recommended that you don't upload your API key to github or anywhere else public.  Keep the '.gitignore' file to exclude your apikeys.js file from the repository.
+
+
+Uses an API from https://newsapi.org.
