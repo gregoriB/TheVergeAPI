@@ -49,7 +49,7 @@ img {
 
 footer {
     padding: 8% 0 8% 0;
-    margin: 0 auto;
+    margin: -2px auto 0 auto;
     max-width: 100%;
     background-image: linear-gradient(to right, #13E0E8 20%, #D6056B 80%);
     background-image: -webkit-linear-gradient(left, #13E0E8 20%, #D6056B 80%);
