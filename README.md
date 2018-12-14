@@ -1,21 +1,10 @@
 
-https://theverge-top-stories.herokuapp.com/
+**Check it out here:** https://theverge-top-stories.herokuapp.com/
 
-The API key is hidden from the public.  In order to run this, one must add their own API key.  To do this, create an 'apikeys.js' file and add your API key to an object.  Then perform a module export on the object.  Follow this example: 
+To install, clone the repo and the use `npm install` to install all necesary dependencies.
 
-	const apikey = {
-			SECRET_KEY: 'apiKey=YOUR_SECRET_API_KEY_GOES_HERE'
-			}
+Uses *dotenv* to keep the API key separate and hidden from the public.  Create a file called '.env' and add you api key to it like this:
 
-	module.exports = apikey;
+`API_KEY:yourkeygoeshere`
 
-
-Of if you choose to, you can instead paste your API key into the 'key' variable in the app.js file.  Example:
-
-	const key = 'apikey=YOUR_SECRET_API_KEY_GOES_HERE';
-
-
-It's recommended that you don't upload your API key to github or anywhere else public.  Keep the '.gitignore' file to exclude your apikeys.js file from the repository.
-
-
-Uses an API from https://newsapi.org.
+Uses the https://newsapi.org API.

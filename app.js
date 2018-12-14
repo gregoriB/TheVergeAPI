@@ -1,33 +1,27 @@
+require('dotenv').config()
 const express = require('express');
 const app = express();
 const request = require('request');
-const apikey = require('./apikeys.js');
-
- // for local testing purposes
-const server = app.listen(3000, "127.0.0.1", function() {
-    const host = server.address().address;
-    const port = server.address().port;
-    console.log('server running at:');
-    console.log('http://' + host + ':' + port);
-});
 
 app.set('view engine', 'ejs');
 
 app.use(express.static('public'));
 
-app.get('/', function(req, res) {
+app.get('/', (req, res) =>  {
     const url = 'https://newsapi.org/v2/top-headlines?sources=the-verge&';
-    const key = apikey.SECRET_KEY; // taken from exported object in ./apikeys.js
-    request(url + key, function(error, response, body) {
-        if (!error && response.statusCode == 200) {
-            const data = JSON.parse(body);
-            res.render('index', {data: data});
-        } else {
-            console.log(error);
-        } 
+    const key = process.env.API_KEY;
+    request(url + key, (error, response, body) => {
+        if (error) {
+            throw error;
+        }
+        if (response.statusCode !== 200) {
+            return res.send(response.statusCode);
+        }
+        const data = JSON.parse(body);
+        res.render('index', {data: data});
     }); 
 });
 
-app.listen(process.env.PORT, process.env.IP, function() {
-   console.log('server started'); 
-});
+const listener = app.listen(8080, () => {
+    console.log(`app listening on port: ${listener.address().port}`);
+  });
