@@ -1,10 +1,1 @@
-
-**Check it out here:** https://theverge-top-stories.herokuapp.com/
-
-To install, clone the repo and the use `npm install` to install all necesary dependencies.
-
-Uses *dotenv* to keep the API key separate and hidden from the public.  Create a file called '.env' and add you api key to it like this:
-
-`API_KEY:yourkeygoeshere`
-
-Uses the https://newsapi.org API.
+Doesn't quite work since Netlify functions don't play well with external files.  Putting the EJS string directly into the server.js file allows me to convert it and then send it to the client using `res.send`, but it seems to cause issues with image urls from the API, and also prevents me from loading any CSS files.  So at this point, the only thing I can do is render the article texts and links.
