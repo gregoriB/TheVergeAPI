@@ -8,7 +8,7 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
 app.get('/', (req, res) =>  {
-    const url = 'https://newsapi.org/v2/top-headlines?sources=the-verge&';
+    const url = 'https://newsapi.org/v2/top-headlines?sources=the-verge&apiKey=';
     const key = process.env.API_KEY;
     request(url + key, (error, response, body) => {
         if (error) throw error;
@@ -19,4 +19,7 @@ app.get('/', (req, res) =>  {
     }); 
 });
 
-const listener = app.listen(8080, () => console.log(`app listening on port: ${listener.address().port}`));
+const port = process.env.PORT || 8080;
+const listener = app.listen(port, () => {
+    console.log(`app listening on port: ${listener.address().port}`);
+});
